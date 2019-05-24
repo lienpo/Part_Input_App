@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>Input part</h3>
+    </hr>
+
+    {%- for category, message in get_flashed_messages(with_categories = true) %}
+    <div class = "alert alert-danger">
+      {{ message }}
+    </div>
+    {%- endfor %}
+
+    <form action = "{{ request.path }}" method = "post">
+      <dl>
+	<label for = "PN">Part Number</label><br>
+	<input type = "text" name = "PN" placeholder = "Part Number" /><br>
+	<label for = "LOT">Lot</label><br>
+	<input type = "text" name = "LOT" placeholder = "Lot" /><br>
+	<label for = "HANGER">Hanger</label><br>
+	<input type = "text" name = "HANGER" placeholder = "Hanger" /><br>
+      </dl>
+      <p><input type=submit value =Submit>
+    </form>
+  </body>
+</html>
+
